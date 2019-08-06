@@ -30,7 +30,7 @@ return [
     ],
     'view_manager' => [
         'template_path_stack' => [
-            'pessoa' => __DIR__ . '/../view',
+            'usuario' => __DIR__ . '/../view',
         ],
     ],
     'db' => [

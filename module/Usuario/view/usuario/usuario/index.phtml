@@ -1,7 +1,28 @@
 <?php
     $minhavar = "Adriano";
-    var_dump($usuarios);
 ?>
 
-<h1>Minha View do controller Usuario do módulo Usuario</h1>
-<p><?=$minhavar?></p>
+<h1>Lista de Usuários</h1>
+<hr>
+
+
+<table class="table table-stripped">
+    <thead>
+        <th>Id</th>
+        <th>Nome</th>
+        <th>Sobrenome</th>
+        <th>Email</th>
+        <th>Situação</th>
+    </thead>
+    <tbody>
+        <?php foreach($usuarios as $usuario): ?>
+        <tr>
+            <td><?= $usuario->getId() ?></td>
+            <td><?= $usuario->getNome() ?></td>
+            <td><?= $usuario->getSobrenome() ?></td>
+            <td><?= $usuario->getEmail() ?></td>
+            <td><?= $usuario->getSituacao() ?></td>
+        </tr>
+        <?php endforeach ?>
+    </tbody>
+</table>
