@@ -1,1 +1,84 @@
-<div class="titulo">Rota Adicionar!</div>
+<?php
+$title = "Adicionando novo usuário";
+$this->headTitle($title);
+?>
+
+<h1><?= $title ?></h1>
+
+<?php
+$form->setAttribute('action', $this->url('usuario', ['action'=>'adicionar']));
+$form->prepare();
+
+echo $this->form()->openTag($form);
+
+$id = $this->form->get('id');
+$nome = $this->form->get('nome');
+$sobrenome = $this->form->get('sobrenome');
+$email = $this->form->get('email');
+$situacao = $this->form->get('situacao');
+
+$nome->setAttribute('class', 'form-control');
+$nome->setAttribute('autofocus', 'autofocus');
+$sobrenome->setAttribute('class', 'form-control');
+$sobrenome->setAttribute('autofocus', 'autofocus');
+$email->setAttribute('class', 'form-control');
+$email->setAttribute('autofocus', 'autofocus');
+$situacao->setAttribute('class', 'form-control');
+$situacao->setAttribute('autofocus', 'autofocus');
+
+$submit = $this->form->get('submit');
+$submit->setAttribute('class', 'btn btn-primary btn-lg');
+?>
+
+<?= $this->formElement($id) ?>
+
+<div class="form-row">
+    <div class="form-group col-md-6">
+        <?= $this->formLabel($nome) ?>
+        <?= $this->formElement($nome) ?>
+        <?= $this->formElementErrors()->render($nome,['class'=>'help-block']) ?>
+    </div>
+</div>
+
+<div class="form-row">
+    <div class="form-group col-md-6">
+        <?= $this->formLabel($sobrenome) ?>
+        <?= $this->formElement($sobrenome) ?>
+        <?= $this->formElementErrors()->render($sobrenome,['class'=>'help-block']) ?>
+    </div>
+</div>
+
+<div class="form-row">
+    <div class="form-group col-md-6">
+        <?= $this->formLabel($email) ?>
+        <?= $this->formElement($email) ?>
+        <?= $this->formElementErrors()->render($email,['class'=>'help-block']) ?>
+    </div>
+</div>
+
+<div class="form-row">
+    <div class="form-group col-md-6">
+        <?= $this->formLabel($situacao) ?>
+        <?= $this->formElement($situacao) ?>
+        <?= $this->formElementErrors()->render($situacao,['class'=>'help-block']) ?>
+    </div>
+</div>
+
+<div class="buttons">
+    <?= $this->formElement($submit) ?>
+    <a class="btn btn-warning" href="<?= $this->url('usuario', ['action'=>'index']) ?>">Voltar</a>
+</div>
+<hr>
+
+<style>
+    .btn {
+        font-size: 1.5rem;
+        padding: 8px;
+        border-radius: 8px;
+        margin-left: 5px;
+    }
+
+    .buttons {
+        text-align: center;
+    }
+</style>

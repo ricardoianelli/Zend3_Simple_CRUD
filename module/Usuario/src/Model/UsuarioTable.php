@@ -34,7 +34,7 @@ class UsuarioTable
     {
         $data = [
             'nome' => $usuario->getNome(),
-            'sobrenome' => $usuario->geSobrenome(),
+            'sobrenome' => $usuario->getSobrenome(),
             'email' => $usuario->getEmail(),
             'situacao' => $usuario->getSituacao(),
         ];

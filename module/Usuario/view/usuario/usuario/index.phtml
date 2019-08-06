@@ -5,7 +5,6 @@
 <h1>Lista de Usuários</h1>
 <hr>
 
-
 <table class="table table-stripped">
     <thead>
         <th>Id</th>
@@ -26,3 +25,13 @@
         <?php endforeach ?>
     </tbody>
 </table>
+
+<div class="buttons">
+    <a class="btn btn-success" href="<?= $this->url('usuario', ['action'=>'adicionar']) ?>">Adicionar</a>
+</div>
+
+<style>
+    .buttons {
+        text-align: center;
+    }
+</style>
